@@ -1,0 +1,16 @@
+// import { createDecipheriv } from 'crypto';
+
+const crypto = require('crypto');
+
+const decryptPayload = (encryptedData,secret) => {
+  encryptedData = Buffer.from(encryptedData, 'base64').toString('ascii')
+  let encryptionMethod = 'AES-256-CBC';
+  let iv = secret.substr(0, 16);
+  let key = Buffer.concat([Buffer.from(secret), Buffer.alloc(32)], 32);
+  let decryptor = createDecipheriv(encryptionMethod, key, iv);
+  let decryptData = decryptor.update(encryptedData, 'base64', 'utf8') + decryptor.final('utf8');
+  return decryptData
+}
+
+let string = JSON.stringify("M1NhSTZDV29mSUR1ZWJTTzFmWnBEYlUydmlEYWVkVVhXYUwrKzN2b3c1NVdrUjZHUHV6NnN3Q2JEOWgzNkxEUUNZU0NCa2ZGcDR2ZFNRVmlnTEc2OW4yNGpqQzMrRWhGTFFjMWZGQnpXUnNZZWtNVG5nZm8ySFNiQU9wdENsMUtMUTFpODlOU3FzK2hENE9xUTVnaE96OHZqQmg3QUtQNEg0a01vR1RncXVwMHZpb1RuSDI4bnZsTUhyZENqcGdvazNGamdmMmVNV1FSZWFnbW1rODFKTDFlZTVSejdraEpjR2h3K3RycGRGa0poMEVHdzVKNlFIc042a3UyeHBPK29sMGgzT0NkMlQzUXJ6enRpSVh2bWQyQnlTUDNFTTYyc0hxN3NBN29HeHVLeFlNQ0NKV1pmODdEalhQVVg3UzBSMGIxeGp3bWxBOTNUNUxVVWdJSUpXYzIvZklqY0xEWjRxVnRnSTBDZy9lL0JxekZPSGdRdWN2QWF5cUJrc25mYUZQRytiUXBGMjVSR245dlRyYkQ3YkU3REZWWnJXdjY1U0hFNmg4K0dNbjZPZTgwMU5ZRktGOEdDRTJCZUJFUXZDbW9LV2wzTzZQa0JSUFVmU2Z5bnRTeUNUOGRucThsVWVrZFNvYTgyekYzeExGRzZWNDUzUkx5cytsaTVRRHdja0R3TjNMTjRoaXE0TnBCNVpTbEFXOXdGV0hBQ1Z6Yld1TVRwbHJtT3FmUHR0R3Q0c1NVdFYybVV0Rmk2QVFweFVFTVo2VDdhNmZUaHFhclpRMURqb2RTUEZ0aGVwaVhCZUwwNnltNE5aMjh6UmMxNHBFMCszQnVhQkM3dEdmejdCcHYvRHJNWVhaRkFtNEdIcWkyVXhoTjJIOTVaNnpFdnUwUzJlN2tXY2V0MDVCU0UrMmZGTGRPU00xUFhwRkpwTXNENW82d0RSL01TVGVpbXBVYkU3M3dWcmpvVmNDYW5jMURmUzd3eVNxN3pHNkdqZk52WXRGS01mT2VvVUdjWDVxUVhRdGxvY2J6S0VqUnN0elVEZS9YaS9NRTY5Ynh3YXFjamY4T1ltY2dIR2w3SkNsM083NFRDS0RTVVEyT0pyZlhmaDBmYXRkeXJESnBROG0rY1BVSjJyc2RTek43WWJRYUZFelpuRER0ZGwyNjJsd3BvanRMMUtJaDZyTHFmajdWRGVHNWc5N3hyaW5wT1l4eW1nPT0=");
+console.log(decryptPayload(string,'dIhKypsjPSmIMIObqEiDUjSMorJHdUGh'))

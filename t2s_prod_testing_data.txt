@@ -1,0 +1,18 @@
+//List of T2S shopper_id (customer_id in the payload)
+
+75674756	lagnajit@datman.je
+73106365	muzammil@datman.je
+74334715	nitish@datman.je
+68033413	sandeep@datman.je
+71691150	tikaram@datman.je
+80491037  sundaresan@datman.je 
+
+
+//Merchant id - live earth gateway points
+host: d-1337.t2scdn.com	
+name: LIVE EARTH GATEWAY TESTING!!
+MID: 63155140 - T2S Developer testing - Earth
+MID: 63181447 - T2S Developer Testing - 
+
+//Ireland prod testing MID
+MID: 663163076 , Test Ireland Merchant 1

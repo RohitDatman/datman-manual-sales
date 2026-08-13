@@ -1,0 +1,20 @@
+//host: datman-gateway-rds-proxy-NLB-779678430d643cdb.elb.us-east-1.amazonaws.com
+//table: order_info
+//order_id,amount,host,Datman merchant_id, T2S customer/shopper id
+294493530	revamp5.t2scdn.com	1111111	53
+294493539	revamp5.t2scdn.com	1111111	53
+294493542	revamp5.t2scdn.com	1111111	53
+294493550	fusion1.t2scdn.com	63190573	46
+294493571	fusion1.t2scdn.com	63190573	17
+294498553 (175.70) revamp5.t2scdn.com 1
+319858655   fusion1.t2scdn.com	63190573	NULL updated @ 30-aug-2021
+
+//to get the merchant_id from config
+//select o.id,c.host,c.merchant_id from order_info o join config c on o.host = c.host where o.id = order_id ;
+
+//shopper id staging
+27202	muzammil@datman.je
+31837	nitish@datman.je
+103047	sandeep@datman.je
+27507	shalinidatman@gmail.com
+//https://sit-web-3-uk.fhcdn.dev/
