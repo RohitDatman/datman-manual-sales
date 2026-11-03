@@ -4,7 +4,7 @@ let secret = "ytyf3Ex2dV=3@#eQL7UgcWvNk^w*+L5h";
 
 // https://stripe-b.datmancrm.com/v1/stripe-pay?data=
 // "https://stripe.datmancrm.com/v1/stripe-pay?data="
-const BASE_URL = "https://stripe-b.datmancrm.com/v1/stripe-pay?data=";
+const BASE_URL = "https://stripe.datmancrm.com/v1/stripe-pay?data=";
 
 let encryptRequest = (data) => {
   let encryptionMethod = "AES-256-CBC";

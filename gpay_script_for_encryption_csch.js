@@ -40,15 +40,16 @@ let token_pay_payload = {
   // 665000067 - CS-CH
   // 663209459 - cs-ch
   // 1235001 - cs
-  merchant_id: "1235001", //63169829, 663191808, 663191808, 63155140
+  // 1234570 - checkout hf
+  merchant_id: "663208347", //63169829, 663191808, 663191808, 63155140
   order_id: randomOrderID,
-  customer_id: "7834747793",
+  customer_id: "93838484",
   provider: "FH",
   email: "rohit@datman.je",
   phoneNumber: "8677867878",
   name: "XYZ Takeaway",
   DbTotal: true,
-  Amount: "10.00",
+  Amount: "39.00",
   AvsHouseNumber: "12",
   AvsPostcode: "AA11AA",
   MerchantReference: "LAKDSF29348LAKSDJF",
@@ -69,9 +70,9 @@ let token_pay_payload = {
   gatewayParameters: {
     gateway: "googlepay",
     instrumentToken: {
-  "signature": "MEUCIBlREKHrpEgi87i0/UGy/f33hiM519IBex9j5sDEJj//AiEAjoh1PFBgf54OX2mJKDEIBUiWx/hH/+cVzYpMWSahRRU=",
+  "signature": "MEQCIB0iXKbyDxJ/SRj3VBnUY4SP5pO6ktfUFUA9Ds5McjCXAiBac2gDHBK6+ztV/95tVDpMWkXhNmqBkT1jCbkjyUDZfA==",
   "protocolVersion": "ECv1",
-  "signedMessage": "{\"encryptedMessage\":\"d+vzefSZvvsScc7v5rpOBSEBnMtsl/s0ZXXEVaVKofLRHa4+0S4/4QFARXDW0P5wAwMvJGZf8DhlaVUVTWyCaSwPds0E7+a908gB4JLbxEv4HaX+Jj3t6G/481CyiNJr7c8QpJDhCEZz3kr/pmpbCwhf5L3KWdpc/IgFOYDT5B1Ur0gajeNGWbst8U4HwTH8USDGP3NwBIKgM5f7gqAWhFqshA5ZNHjvGVZE2q63hKzFdtR1N5MCsA21cg98m0svkEaPF1BG6adOGJVP6YLjLIMymlfIlBoSdC5DS1do1P2X4EtwSxqrUUr5nTiSzvAedoUrrKnAKTVeI/0e1FPAgpWEzFsr2XktfywVfbL/xVmRVmlF8p3/WqTWaZlFEpNse4nDdpzzxuGjKSqm87EuPky779nDbgAvOqmIu1dP91zvAd4IkTvlcH2MfsrB5Pi9I7LqzDtT3+Vv\",\"ephemeralPublicKey\":\"BC3y3ReqDo0rB6/Pcrur7c2GvIeOIDnjIX6uv9iuNyhkqaw2ULxdJu+TtBBiWw/a0gQVO0MJ2mBXyRpbzMg2vfs\\u003d\",\"tag\":\"xlGRKEmN3QNyrKOnBcQUyJhwRsx0NZTbraVLsgyJfnE\\u003d\"}"
+  "signedMessage": "{\"encryptedMessage\":\"oOi+gOzcVh4Wm9q/zgiDYizGZCyKDxXm0RaYjT74bwzjBQ/Y6Y5TwUn97ozLc3ejEgO1lP5ny6vFz91InzPH/LJtxQk0Td8LvwVsJDXh+Tb4zAx3z5d4u3qya8A8gkCpfEG5gCieQ8xeTJXvfX6TR0YhdZwcn0osf2WXErCwMvuEL20TTvhc4yG1521VMqA0+SoqQvCY0LXshhj73p/Kha8uYB1PFha/541buZpjp0qEo/gdUtpgVDUL27eq1N5gdumP/rl21k4FnRkjQTO7k18WeYTmK7rImfOczBHqklj3FTtCZOYj5P88ZpXbnHQo5nkbT6u3I2MQNA/rI2ldPK5UTOtHm3RZ+fy/UoiuVK8LGOF3ptmr8D6pGcD7UYUdCWl3e4W5nDNO33peFjJyBee1Ab0i+iPf1WG8UG2A89gUKdgkD7lfk3TmTkWDWKBg4GjnNigk0gmAiOhfoC3Ns3cV93R9mc5dSDH0uDQiAQL/3GEC6xbQiqNl9cEtvLD/JJCd6VF9a1hF\",\"ephemeralPublicKey\":\"BCoWk42Hn2jeuwHz4RNMcieqAUnz4ziKIzi+8J98cz2StgBch6V4takjwo8geHyKuiS3vdl8mRBPOBZcJ00OTEQ\\u003d\",\"tag\":\"5ZUnQJqUDr1Qxe5xSOHksLuduLllzLZhSY72pFwQTio\\u003d\"}"
 },
     "billingAddress": {
       "address1": "1",
@@ -115,14 +116,14 @@ let token_pay_payload = {
     }
   },
 
-  SplitFee: [
-    {
-      partner_merchant_id: "663208546",
-      type_id: 1,
-      value: 1.01,
-      value_type: "amount",
-    },
-  ],
+  // SplitFee: [
+  //   {
+  //     partner_merchant_id: "663208546",
+  //     type_id: 1,
+  //     value: 1.01,
+  //     value_type: "amount",
+  //   },
+  // ],
 };
 
 console.log(`${encryptRequest(JSON.stringify(token_pay_payload))}`);

@@ -28,8 +28,10 @@ $merchant_id =
 
 // cs prod mid
 
-"63181447";
-// "663234350";
+// "63181447";
+
+// CS old UI mid
+// "663223828";
 
 //cs cashflow mid
 // 663194535;
@@ -123,9 +125,9 @@ $merchant_id =
 // "663195603";
 
 
-// "663195604";
+// "663233906";
 
-// "663224074";
+// "663240734";
 
 // * 663194940 - Adyen UK
 // * 663207711 - cardstream Ireland
@@ -175,13 +177,13 @@ $payload = array(
 
  
   // "80491043",
-  // $faker->numberBetween(10000000,19999999),
+  $faker->numberBetween(10000000,19999999),
   // "customer_id"           => $faker->numberBetween(10000000,19999999),
   "provider" => $provider,
   "email" => "banu@datman.je",
   "phoneNumber" => $faker->numerify("07##########"),
   "name" => $business_name,
-  "Amount" => "5.00",//$faker->randomFloat(2,10,50),
+  "Amount" => "7.12",//$faker->randomFloat(2,10,50),
   "AvsHouseNumber" => "Flat 6",//$faker->buildingNumber,
   "AvsPostcode" => "NN178YG",//$faker->postcode,
   "MerchantReference" => $faker->numerify("MerchantReference##########"),
@@ -197,7 +199,7 @@ $payload = array(
   "address2" => $faker->streetName, //new field,
 //   "captureDelayHours" => "1",
 //  "authorisation_type" => "PreAuth",
-  "txnType" => "WALLET_RECHARGE_AGAINST_ORDER",
+  // "txnType" => "WALLET_RECHARGE_AGAINST_ORDER",
   // "txnType" => "CREATE_MIT_TOKEN",
   // "TokenAvs" => 'a:1:{i:0;a:2:{s:14:"AvsHouseNumber";s:6:"London";s:11:"AvsPostcode";s:8:"ST66DX";}}', //optional (Applicable for Optomany only)
   // "CashPaymentUrl"        => $CashPaymentUrl,
@@ -234,8 +236,8 @@ $payload = array(
   
   
   // // cs master token 
-  "token"  => "mxtoken_e59888042daebaef34b15aklfaflq5a9464154ae91feb239aa4a82938436c3la", 
-  "last4Digits" => '6935',
+  // "token"  => "mxtoken_e59888042daebaef34b15aklfaflq5a9464154ae91feb239aa4a82938436c3la", 
+  // "last4Digits" => '6935',
    
   //  "token"  => "mxtoken_P7Xie3RqDmaEH7_b-AM0qghiw2J0kKYz",   // Spreedly token 
   // "last4Digits" => '6935'
@@ -256,13 +258,13 @@ $SplitFee = [
     "type_id" => 8,
     "value" => 0.51,
     "value_type" => "amount"
-  ],
-  [
-    "partner_merchant_id" => 663209575,     //,663206519
-    "type_id" => 3,
-    "value" => 0.05,
-    "value_type" => "amount"
-  ],
+  ]
+  // [
+  //   "partner_merchant_id" => 663209575,     //,663206519
+  //   "type_id" => 3,
+  //   "value" => 0.05,
+  //   "value_type" => "amount"
+  // ],
 ];
 $payload['SplitFee'] = $SplitFee;
 
@@ -273,9 +275,9 @@ echo "</pre>";
 $encryptedData = payment_encrypt2($payload);
 $encryptNewData = EncryptNew(json_encode($payload));
 
-// $datmanHost = "https://datmanpay.com";// prod
+$datmanHost = "https://datmanpay.com";// prod
 
-$datmanHost = "https://b.datmanpay.com";// pre prod
+// $datmanHost = "https://b.datmanpay.com";// pre prod
 
 // $datmanHost = "https://dr-payments.datmanpay.com";
 

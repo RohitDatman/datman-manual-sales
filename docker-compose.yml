@@ -1,0 +1,27 @@
+services:
+  php-scripts:
+    build: .
+    image: datman-php-scripts
+    container_name: datman-php-scripts
+    volumes:
+      - .:/app
+    working_dir: /app
+    # Keeps the container running so scripts can be run on demand via
+    # `docker compose exec php-scripts php <script>.php` instead of a
+    # fresh `docker run` each time.
+    command: ["tail", "-f", "/dev/null"]
+    restart: unless-stopped
+
+  web:
+    build: .
+    image: datman-php-scripts
+    container_name: datman-php-scripts-web
+    volumes:
+      - .:/app
+    working_dir: /app
+    # Dashboard listing every script with a one-click "run" per script.
+    # Bound to localhost only — do not publish this port beyond 127.0.0.1.
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "/app"]
+    ports:
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped

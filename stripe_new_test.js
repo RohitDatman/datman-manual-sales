@@ -5,7 +5,7 @@ const crypto = require('crypto');
  let secret = "pSk0qDEIQxh6PjgSSheg0nYgE00ezwkj"
 
 //const BASE_URL = "https://lojyi3bpw3.execute-api.eu-west-1.amazonaws.com/dev/stripe-pay?data="
-const BASE_URL = "https://ws3-stripe.datmancrm.com/v1/stripe-pay?data="
+const BASE_URL = "https://ws6-stripe.datmancrm.com/v1/stripe-pay?data="
 
 
 

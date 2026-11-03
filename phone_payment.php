@@ -29,6 +29,7 @@ $merchant_id= 663209693;  //adyen - us moto 02m
 // $merchant_id = '1235000';//uk cs 
 // $merchant_id =  663160246; //cs-ch 
 // $merchant_id =  663209459; //checkout us
+// $merchant_id =  63169827;
 
 // Mypay adyen mids
 // UK
@@ -62,7 +63,7 @@ $payload = array(
     // "customer_id"           => 0,
     // "order_id"              => '655877652',
     "customer_id"           => $faker->numberBetween(10000000,19999999),
-    // "customer_id" =>"18461254",
+    // "customer_id" =>"15831780",
     // "customer_id"           => 92385553, //CARDSTREAM
     // "customer_id"           => 17706598, //CHECKOUT-HF
     // "customer_id"           => 5154293, //Spreedly
@@ -151,7 +152,7 @@ echo "</pre>";
 // $migrationHost="https://stage-fh-1.datmanpay.com";
 // $datmanHost = "http://legecy-release.datmanpay.com";
 // $datmanHost = "https://stage-fh-1.datmanpay.com";
-$datmanHost = "https://ws10-payments.datmanpay";
+$datmanHost = "https://ws8-payments.datmanpay";
 // $phpHost = "https://77c25y8fq4.execute-api.eu-west-2.amazonaws.com/ws6"; //SIT
 // $phpHost = "https://ws10-payments.datmanpay.com";
 // $phpHost="https://stage-fh-1.datmanpay.com";
@@ -159,7 +160,7 @@ $datmanHost = "https://ws10-payments.datmanpay";
 // $datmanHost = "https://legacy-qa-1.datmanpay.com";
 // $datmanHost = "https://stage-6.datmanpay.com";
 // $datmanHost = "https://legacy-test.datmanpay.com";
-$switchHost = 'https://ws10-payments.datmanpay.com/switch/api/v1';
+$switchHost = 'https://ws8-payments.datmanpay.com/switch/api/v1';
 // $switchHost = "https://stage-fh-payments.datmanpay.com/switch/api/v1";
 // $switchHost = 'https://stage-fh-1.datmanpay.com/switch/api/v1';
 // $switchHost = "https://stage-payments.datmanpay.com/switch/api/v1";

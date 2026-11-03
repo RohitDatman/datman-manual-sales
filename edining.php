@@ -26,6 +26,7 @@ $merchant_id = 663212350; // 63169827
 // 663215805 - order2online
 // - 663217451 - YPSOLUTIONS
 // 663215188 - ask4dish
+// 1234667
 $business_name = $faker->company;
 //$host = "https://".preg_replace('/[^A-za-z0-9]+/', '', strtolower($business_name)).".com";
 $host = preg_replace('/[^A-za-z0-9]+/', '', strtolower($business_name)).".com";
@@ -34,7 +35,6 @@ $webhook_url = "https://webhook.site/59344984-af91-4992-aac9-035ebfd1b2dc"; //$f
 // $webhook_url = "https://www.google.com";
 $redirect_url = "https://google.com";
 $cancel_url = "https://".$host."/cancel";
-
 $payload = array(
     "host"                  => $host,
     "merchant_id"           => $merchant_id,

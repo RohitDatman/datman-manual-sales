@@ -4,19 +4,19 @@ const crypto = require("crypto");
 const BASE_URL =  
 'https://stage-fh-gateway.datmanpay.com/add-card'
 
-// 'https://ws9-gateway.datmanpay.com/add-card';
+// 'https://ws7-gateway.datmanpay.com/add-card';
 
 // Secret key for encryption and other payload details
 const secret = "p87aAzmPkU!=jJUr@Q%$dXznMLRfFuTF";
 // Payload data to be sent in the request
 const countryCode = "GB"; //AU/US/GB/IR
 const payload = {
-    reference: "8478478484", // Reference accept only numbers up to 16 digits
-    customer_id: "8478478484", // CustomerId accept only numbers up to 16 digits
+    reference: "937384734", // Reference accept only numbers up to 16 digits
+    customer_id: "937384734", // CustomerId accept only numbers up to 16 digits
     countryCode: countryCode, // relay on country table
     RedirectUrl: "https://example.com", // URL to redirect after processing
     WebhookUrl: "https://577f20eb63fd607cb01a53534be8a41e.m.pipedream.net", // URL for webhook notifications
-    // merchant_id : "663209717",
+    merchant_id : "663208347",
     // txnType : "CREATE_MIT_TOKEN"
 }
 

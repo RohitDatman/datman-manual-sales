@@ -5,7 +5,7 @@ $faker = Faker\Factory::create();
 
 //forming business related values
 //663226638
-$merchant_id = "663227491";
+$merchant_id = "663231912";
 // * 63181447  - Cardstream
 // * 663207711 - cardstream Ireland
 // * 663195603 - cardstream-ch us New UI
@@ -25,7 +25,7 @@ $merchant_id = "663227491";
 // 663227724 - Orbititech
 // 663231532 - GK soft
 // 663230353 - ask4dish [do not use for prod]
-// 663232682 - appcompanion
+// 663231912 - appcompanion
 // 663233732 - orbititech
 // $provider = "QC";
 $business_name = $faker->company;
@@ -145,12 +145,12 @@ $encryptNewData = EncryptNew(json_encode($payload));
 // $datmanHost = "https://ws4.datmanpay.com";
 
 // $datmanHost = "https://payments-edining.datmanpay.com";// edining prod
-$datmanHost = "https://payments-fastfood.datmanpay.com";//  fastfood prod
+// $datmanHost = "https://payments-fastfood.datmanpay.com";//  fastfood prod
 // $datmanHost = "https://payments-quikchow.datmanpay.com";//  quickchow prod
 // $datmanHost = "https://payments-gk-pay.datmanpay.com";//  gkpay prod
 // $datmanHost = "https://payments-ask4dish.datmanpay.com";//  gkpay prod
 // $datmanHost = "https://payments-orbititech.datmanpay.com"; //
-// $datmanHost = "https://payments-appcompanion.datmanpay.com"; //
+$datmanHost = "https://payments-appcompanion.datmanpay.com"; //
 // $datmanHost = "https://datmanpay.com";
 
 
@@ -186,7 +186,7 @@ echo "<a href='$switchHost/phone-payment/?data=" . EncryptNew(json_encode($paylo
 // cDugfbBrvFW4X2Dvpxa5hJoot82d8j - appcomapnion
 // Is1FlCFiRR3simumDWdotklr9Eg2Sk - FH
 
-function payment_encrypt2($string, $key = 'OL8tSk888oBxTj2Pa6Hbk2H3pIDU3l')
+function payment_encrypt2($string, $key = 'cDugfbBrvFW4X2Dvpxa5hJoot82d8j')
 {
   return urlencode((base64_encode(@mcrypt_encrypt(
     MCRYPT_RIJNDAEL_256,
@@ -198,7 +198,7 @@ function payment_encrypt2($string, $key = 'OL8tSk888oBxTj2Pa6Hbk2H3pIDU3l')
   )));
 }
 
-function EncryptNew($textToEncrypt, $secret = 'OL8tSk888oBxTj2Pa6Hbk2H3pIDU3l', $encryptionMethod = "AES-256-CBC")
+function EncryptNew($textToEncrypt, $secret = 'cDugfbBrvFW4X2Dvpxa5hJoot82d8j', $encryptionMethod = "AES-256-CBC")
 {
    $iv               = substr($secret, 0, 16);
    $encryptedMessage = openssl_encrypt($textToEncrypt, $encryptionMethod, $secret, 0, $iv);

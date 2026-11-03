@@ -3,8 +3,8 @@
 require_once 'vendor/autoload.php'; //composer require fzaninotto/faker
 $faker = Faker\Factory::create();
 
-//forming business related values
-$merchant_id = "63181447";
+//forming business related values  
+$merchant_id = "663227683";
 //  $merchant_id = "663197155"; // cs
 // $merchant_id = 663195606;
 //  $merchant_id = 663227683; //adyen  us store id enabled
@@ -16,11 +16,14 @@ $merchant_id = "63181447";
 // adyen-hf - 663190774
 // cs-ch usa
 // "63191145";
+// 663232982 Spreedly [do not make sale]
+// 663195603 - spreedly
+// 63181447 - CS new UI
 $provider = "FH";
 $business_name = $faker->company;
 $host = preg_replace('/[^A-za-z0-9]+/', '', strtolower($business_name)).".com";
 $email = $faker->email;
-$webhookUrl = "https://54602f6a156431a177c223aa5bd34f1b.m.pipedream.net"; 
+$webhookUrl = "https://54602f6a156431a177c223aa5bd34f1b.m.pipedream.net";
 $RedirectUrl = "https://".$host."/success";
 $CancelUrl = "https://".$host."/cancel";
 $CashPaymentUrl = "https://www.google.com/search?q=datman&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiio7TVir30AhWQwzgGHTCADqYQ_AUoAnoECAEQBA&biw=1226&bih=689&dpr=2";
@@ -35,13 +38,13 @@ $payload = array(
     "email"                 => "rohit@datman.je",//$email,
     "phoneNumber"           => $faker->numerify("07##########"),
     "name"                  => $business_name,
-    "Amount"                => "1.00",//$faker->randomFloat(2,10,49),
+    "Amount"                => "5.99",//$faker->randomFloat(2,10,49),
     "AvsHouseNumber"        => $faker->buildingNumber,
     "AvsPostcode"           => "ST57TF",//$faker->postcode,
     "MerchantReference"     => $faker->numerify("MerchantReference##########"),
     "RedirectUrl"           => $RedirectUrl,
     "CancelUrl"             => $CancelUrl,
-    "backurl"              => "https://www.google.com/",
+    // "backurl"              => "",
     "WebhookUrl"            => $webhookUrl,
     "customer_joining_date" => $faker->dateTimeThisMonth->format('Y-m-d H:i:s'),
     "firstname"             => "Rohit",//$faker->firstName, //new field
@@ -80,7 +83,7 @@ $encryptedData = payment_encrypt2($payload);
 
 //https:/payments-b.datmanpay.com/switch/api/v1
 $datmanHost = "http://datmanpay.com";
-$switchHost = "https:/payments-b.datmanpay.com/switch/api/v1";
+$switchHost = "https:/payments.datmanpay.com/switch/api/v1";
 // "https:/payments.datmanpay.com/switch/api/v1";
 //https:/payments-b.datmanpay.com/switch/api/v1
 // EAHoxLsA9GD8yUR1H3N7H8Dcw8IreEwg - Pre prod token
@@ -97,8 +100,8 @@ echo "<br>";
 echo "<a href='$switchHost/phone-payment/?data=".EncryptNew(json_encode($payload))."' target='_blank'>Cardstream phone payment</a> - <i style='color:red'>Not in production yet</i>";
 echo "<br>$switchHost/phone-payment/?data=".EncryptNew(json_encode($payload));
 
-  // function payment_encrypt2($string, $key = 'wKcbCMfdjX3PPf3dFDdrb6BuQGcVbs4h') //PROD 
-   function payment_encrypt2($string, $key = 'EAHoxLsA9GD8yUR1H3N7H8Dcw8IreEwg') // pre-prod
+  function payment_encrypt2($string, $key = 'wKcbCMfdjX3PPf3dFDdrb6BuQGcVbs4h') //PROD 
+  //  function payment_encrypt2($string, $key = 'EAHoxLsA9GD8yUR1H3N7H8Dcw8IreEwg') // pre-prod
 {
   return urlencode((base64_encode(@mcrypt_encrypt(
       MCRYPT_RIJNDAEL_256,
@@ -109,7 +112,7 @@ echo "<br>$switchHost/phone-payment/?data=".EncryptNew(json_encode($payload));
   ))));
 }
 
-function EncryptNew($textToEncrypt, $secret = 'EAHoxLsA9GD8yUR1H3N7H8Dcw8IreEwg', $encryptionMethod = "AES-256-CBC")
+function EncryptNew($textToEncrypt, $secret = 'wKcbCMfdjX3PPf3dFDdrb6BuQGcVbs4h', $encryptionMethod = "AES-256-CBC")
 
 {
    $iv               = substr($secret, 0, 16);

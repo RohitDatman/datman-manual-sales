@@ -39,7 +39,8 @@ let token_pay_payload = {
   // 663208347 - Adyen UK
   // 665000067 - CS-CH
   // 663211748 - adyen us
-  merchant_id: "663211748", //63169829, 663191808, 663191808, 63155140
+  // 663207730 - sit
+  merchant_id: "663208347", //63169829, 663191808, 663191808, 63155140
   order_id: randomOrderID,
   customer_id: "78347476",
   provider: "FH",
@@ -68,9 +69,9 @@ let token_pay_payload = {
   gatewayParameters: {
     gateway: "googlepay",
     instrumentToken: {
-  "signature": "MEUCIGjnqzLYGNAdXwyRCjGOGexFVjWQloXhWIZ1MoP1FB3hAiEAivst+dsZYWaAV3rr5MVuHis9njtP0kMJ7Aa2NpQ5N0U=",
+  "signature": "MEYCIQCcHtcLgkQSqK0decAUdffMBoNjjtnREO5FrNMkX6/HoQIhAMDGI6UWd4wHM88N+ZmBuX3NN9PebwMbJzTdPx4HHraB",
   "protocolVersion": "ECv1",
-  "signedMessage": "{\"encryptedMessage\":\"9qt3VwcQth6u2MjifnBOngPE3WOi6ajdJ6QX+yPA9YVN9p5JrA15S1vIwLxZpJqvhaCGOD0KaIFEI73n9BLu6HLrIdho8GbPe6on5aRABKmHaS2Vj7uNh/2cGUH/eCduOReNdJKWbX9IPmeuR7WPOy33g/uTQTLYBABHE6/4DuZkJ1xSBaK/xUmNKJhf/rK0g8hife7HirCb83wF1+4/xmlXpeKW7EeBzNJOoTpHJWVQ0sI9imt9pzlHS8cLNJ0fCM7K8uOOH+CrBurp3fv6yjBJ6H4uUVYL6IMWxRlc01RKSOPW5wQnt35mDMJ87m7dJj5Ay946wSv2ytSTanVfkfKeo3GdiNSffojYfNNUHa8Tlz+uiC0Fk6oXJ1zpLR2FeJ4hLktpoeyqTew6Z6LSVevf8XVEbRjZKAj5VvPtsfhprOle2NCvCMUrw/7FuPJUlyeNqjwoFFGPbe/RHMKtEoC24bbu/DJRw5pskUFmzin1FTQu4Ouooj5cfFiixDot8a6XLYwWS8S8\",\"ephemeralPublicKey\":\"BAhthzN/n2iwBDalZ8OEJae0yM6BQ433wYivIIn57ufnb/rsOmADCoPNZElSmDzSU9nPoXwLdnrv8SALDuKXayc\\u003d\",\"tag\":\"8rBrxOesqfB5p37tl+OzEG08zcbdOPbiMPyeDdZfpmU\\u003d\"}"
+  "signedMessage": "{\"encryptedMessage\":\"s6EjiwNEPEIC4Tu+SJOa0/FdGKxI6X1I0GZW2TacmB9x/AQo8bQ8y9ffOM8pHxHcTF5MMB0Wsb2zpwHxUx1ZU9EzcbIt7Lx542/Shm05ewP1XeWQ5Kd16zMiNHa71GOYwoYEhLaZ4QYMm+Peo68q8TiSg+El2Mjws7OFAAu9fgd49sGw9WwZZ4K9CMeQ2qdnfQBmYV0EO31pYuG1AoIJ4K5Dn7J0L4zl8oHypzNSo/3l5B0Ixx4DiU7bQgCuc12m81i9IOEzAH4/k0VwW8x+n31HHlM6BAMUOOS0X/zeTgpao8u2o2GH6Pm1s1i6yUCbLe0hRibyG3pyZ5jP9Nf+pvJMpTvJI5ZPiHjSugbpOpCMMB5RoWpjwTg5Yzm4rfQi1RstqaMU+sKNxrgHwifT6xkKBJBa81xbCcgewXOoSPgRa/7XEj+M+VVCCIs4P296CrGrJDtFMAOzG+zIdgm2fxzLTZ8Tz1oApSy5Z5C7kKhQuVZ4P2zXA8cBNwx+S+OrPMVYtGdJSfNC\",\"ephemeralPublicKey\":\"BAm0fQNepkqdTEX+q8bSNbOHYzwj3k1ERr/jsXE3fPW+qUBEB9bknGMgFGUeG1yw4IV1xfbC+eZ9KB6sZuzqReU\\u003d\",\"tag\":\"J5yRDOFEGu4d3p4ESJFqsevNrqGAfNTN2CRM7SWwP+E\\u003d\"}"
 },
     "billingAddress": {
       "address1": "1",
@@ -110,7 +111,28 @@ let token_pay_payload = {
         "java_enabled": false,
         "javascript_enabled": true,
         "language": "en-US"
+      },
+      "enhancedSchemeData": {
+    "totalTaxAmount": 0.30,
+    "freightAmount": 0,
+    "dutyAmount": 0,
+    "destinationPostalCode": "NN17 8YG",
+    "destinationCountryCode": "GB",
+    "shipFromPostalCode": "M1 1AE",
+    "items": [
+      {
+        "description": "Margherita Pizza",
+        "productCode": "FOOD-001",
+        "commodityCode": "5411",
+        "quantity": 2,
+        "unitOfMeasure": "EA",
+        "unitPrice": 3.04,
+        "discountAmount": 0,
+        "taxAmount": 0,
+        "totalAmount": 6.08
       }
+    ]
+  }
     }
   },
 

@@ -73,11 +73,11 @@ $faker = Faker\Factory::create();
   // $merchant_id=  663209717; // adyen aus
 // 
   // $merchant_id= 663211748; // adyen us rohit 
-  // $merchant_id= 663208347;// Adyen UK rohit 
+  $merchant_id= 663208347;// Adyen UK rohit 
   // $merchant_id= 663210800; // Adyen AUS rohit 
 
 
-  $merchant_id= 1234664; // cs cashflow mid
+  // $merchant_id= 1234664; // cs cashflow mid
 
   // $merchant_id= 1234782; // Adyen NZ merge ecom mid 
   // $merchant_id= 663211913; // Adyen NZ merge ecom mid
@@ -158,7 +158,7 @@ $payload = array(
 
 // "txnType"      => "CREATE_MIT_TOKEN",
   "provider" => $provider,
-  "email" => "automation_test@test.com",
+  "email" => "test@datman.je",
   "phoneNumber" => $faker->numerify("07##########"),
   "name" => $business_name,
   // "Amount"                =>  $faker->randomFloat(2, 10, 50),
@@ -334,7 +334,7 @@ $encryptedData = EncryptNew(json_encode($payload));
 // $datmanHost = "https://ws4.datmanpay.com";
 // $datmanHost = "https://ws7-payments.datmanpay.com/pluto";
 
-$datmanHost = "https://ws7-payments.datmanpay.com";
+$datmanHost = "https://ws6-payments.datmanpay.com";
 
 // $datmanHost = "https://stage-fh-1.datmanpay.com";
 

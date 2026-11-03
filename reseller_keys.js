@@ -1,6 +1,7 @@
 const crypto = require("node:crypto");
 
 const BASE_URL = "https://sandbox-payments.datmanpay.com/opto/card.php?data=";
+// const BASE_URL = "https://payments-quikchow.datmanpay.com/opto/card.php?data="
 
 // 🔁 Generate random values
 const randomOrderId = Math.floor(1000000000 + Math.random() * 9000000000); // 10-digit
@@ -26,13 +27,16 @@ const randomAmount = (Math.random() * (50 - 5) + 5).toFixed(2); // between 5.00 
 // 663214519 - appcompanion
 // 663214585 - EASYEATS
 /// 663215161 - Foodninja
+// 663218428 - BOOKYUP.COM-LIMITED
+// 663218421 - elegent
+// 663235345 - datman-reseller prod
 
 let payload = {
   host: "sandbox.example.com",
-  merchant_id: 663218386,
+  merchant_id: 663218428,
   order_id: randomOrderId,
   // customer_id: randomCustomerId,
-  customer_id: "324406", // FF
+  customer_id: "734638389", // FF
     // customer_id: "251817", // QC AD383260
     // customer_id: "383260", // AD ED932926
 // customer_id: "932926", // ED
@@ -45,7 +49,7 @@ let payload = {
   merchant_reference: "REF123456",
   redirect_url: "https://example.com/success",
   cancel_url: "https://example.com/cancel",
-  webhook_url: "https://webhook.site/78e6156a-dcad-4f7f-93ed-ea0e07d7e504",
+  webhook_url: "https://webhook.site/8701afdd-817f-4e23-af5f-6e77eb46ede0",
   back_url: "https://example.com/back",
   first_name: "John",
   last_name: "Doe",
@@ -67,7 +71,7 @@ const split_fee = [
 
 payload.split_fee = split_fee;
 
-let secret = "d505c8a37a41ecc8bcd56ccc2184514a"; // Must be 32 bytes
+let secret = "c49c9da92868a080fe94019fd2a2c3e6"; // Must be 32 bytes
 
 function encryptPayload(data, secret) {
   const encryptionMethod = "aes-256-cbc";
@@ -88,7 +92,7 @@ function encryptPayload(data, secret) {
 
 const encryptedPayload = encryptPayload(JSON.stringify(payload), secret);
 
-const fullUrl = BASE_URL + encodeURIComponent(encryptedPayload) + `&pub_key=pk_hdUxM6LfVLZIPMC_fS36fZSk`;
+const fullUrl = BASE_URL + encodeURIComponent(encryptedPayload) + `&pub_key=pk_-YYr3ZRJaF-hekLvtcu1ARuj`;
 
 console.log("Generated Values:");
 console.log("order_id:", randomOrderId);
